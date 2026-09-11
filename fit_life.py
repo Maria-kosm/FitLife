@@ -1,5 +1,7 @@
 # Проект FitLife - MVP версия 1.0
-
+# Прописываем константы
+WATER_ML_PER_KG = 30
+ML_IN_LITER = 1000
 
 # 1. Знакомство
 # Запрашиваем у пользователя имя и сохраняем в переменную user_name
@@ -21,16 +23,9 @@ user_height = float(input(
 
 # 3. Логика расчетов (Функции как "черный ящик": используем арифметику)
 # Рассчитываем bmi (Индекс массы тела)
-bmi = user_weight / (user_height ** 2)
-bmi = round(bmi, 1)
+bmi = round(user_weight / (user_height ** 2), 1)
 
-
-# Подсчет воды: вес * 30 мл
-# Прописываем константы
-WATER_ML_PER_KG = 30
-ML_IN_LITER = 1000
-
-# Вычисляем норму воду и переводим в литры
+# Вычисляем норму воды: вес * 30 мл и переводим в литры
 water_ml = user_weight * WATER_ML_PER_KG
 water_l = water_ml / ML_IN_LITER
 
